@@ -1,4 +1,4 @@
-1. Write Smart Contract to code a DAO / Governance
-2. Write deploy scripts
-3. Write scripts to interact with our DAO
-4. Write test scripts to test it all
+1. 4 Smart Contracts to code a minimalistic DAO / Governance
+2. The deploy scripts
+3. The scripts to interact with our DAO
+4. The test scripts to test it all
