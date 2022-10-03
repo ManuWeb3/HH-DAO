@@ -37,10 +37,12 @@ module.exports = {
             //   url: MAINNET_RPC_URL
             // }
             chainId: 31337,
+            blockConfirmations: 1,
         },
         localhost: {
             url: "http://127.0.0.1:8545/",
             chainId: 31337,
+            blockConfirmations: 1,
         },
         goerli: {
             url: GOERLI_RPC_URL,
@@ -50,6 +52,7 @@ module.exports = {
             //   },
             saveDeployments: true,
             chainId: 5,
+            blockConfirmations: 6,
         },
         mainnet: {
             url: MAINNET_RPC_URL,

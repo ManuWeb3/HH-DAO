@@ -11,7 +11,7 @@ contract GovernanceToken is ERC20Votes {
     uint256 private s_maxSupply = 1000000000000000000000000;        // 1M ETH = 1,000,000 * 1e18 wei
 
     constructor () 
-    ERC20("GovernanceToken", "GT")
+    ERC20("GovernanceToken", "GT")      // Hardcoded these args, no i/p at deploy
     ERC20Permit("GovernanceToken") {
         _mint(msg.sender, s_maxSupply);
     }

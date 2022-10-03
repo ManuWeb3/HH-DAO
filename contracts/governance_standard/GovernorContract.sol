@@ -17,14 +17,14 @@ import "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.so
 contract GovernorContract is 
 Governor, GovernorSettings, GovernorCountingSimple, 
 GovernorVotes, GovernorVotesQuorumFraction, GovernorTimelockControl {
-    constructor(
+    constructor(                   // 5 args to be passed at deploy, 2 hardcoded
         IVotes _token, 
         TimelockController _timelock,
         uint256 _votingDelay,     // _votingDelay, _votingPeriod, and _quorumPercentage will be i/p at deploy
         uint256 _votingPeriod,
         uint256 _quorumPercentage
         )
-        Governor("GovernorContract")
+        Governor("GovernorContract")    // hardcoded, no i/p at deploy
         GovernorSettings(_votingDelay, _votingPeriod, 0)    // proposedThreshold = 0, set in OZ Wizard
         GovernorVotes(_token)
         GovernorVotesQuorumFraction(_quorumPercentage)
