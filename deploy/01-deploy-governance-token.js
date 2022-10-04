@@ -20,6 +20,8 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     if(!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {        // process.env is accessible here in deploy script
     log(`Verifying on Goerli.Etherscan.......`)
     await verify(govToken.address, args)
+    console.log("Verified!")
+    console.log("---------")
     }
 
     // delegate()...to create a checkpoint for deployer
@@ -27,8 +29,8 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     // Hey, take my votes and use however you want
     console.log(`Delegating to ${deployer}`)
     await delegate(deployer)
-    console.log("Delegated!!")
-    console.log("-----------")
+    console.log("Delegated!")
+    console.log("----------")
 }
 // outside module.exports
 // JS syntax
@@ -46,4 +48,4 @@ async function delegate(delegatedAccount) {
     console.log(`Number of Checkpoints for ${delegatedAccount} is: ${numberOfCheckpoints}`)
 }
 
-module.exports.tags = ["all", "governor"]
+module.exports.tags = ["all", "govtoken"]

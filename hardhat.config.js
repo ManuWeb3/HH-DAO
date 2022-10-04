@@ -38,11 +38,13 @@ module.exports = {
             // }
             chainId: 31337,
             blockConfirmations: 1,
+            allowUnlimitedContractSize: true,       // disables EIP-170 (to deploy GovernorContract.sol)
         },
         localhost: {
             url: "http://127.0.0.1:8545/",
             chainId: 31337,
             blockConfirmations: 1,
+            allowUnlimitedContractSize: true,       // disables EIP-170 (to deploy GovernorContract.sol)
         },
         goerli: {
             url: GOERLI_RPC_URL,
