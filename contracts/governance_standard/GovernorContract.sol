@@ -41,6 +41,7 @@ GovernorVotes, GovernorVotesQuorumFraction, GovernorTimelockControl {
         returns (uint256)
     {
         return super.votingDelay();
+        // calls GovernorSetting's votingDelay
     }
 
     function votingPeriod()

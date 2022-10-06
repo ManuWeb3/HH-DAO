@@ -6,7 +6,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     const {deploy, log} = deployments                                
     const {deployer} = await getNamedAccounts()                         // deployer is the public address of accounts[0]
     
-    console.log("Deploying GovernanceToken.sol...")
+    console.log("Deploying GovernanceToken.sol...")                     // B#1
     const govToken = await deploy("GovernanceToken", {                  
         from: deployer,
         args: [],                                                                         
@@ -28,7 +28,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     // need to delegate votes to someone at the start
     // Hey, take my votes and use however you want
     console.log(`Delegating to ${deployer}`)
-    await delegate(deployer)
+    await delegate(deployer)                                
     console.log("Delegated!")
     console.log("----------")
 }
@@ -40,7 +40,7 @@ async function delegate(delegatedAccount) {
     // got all-minted-supply when GovToken.sol was deployed (via _mint())
 
     // GovernanceToken.sol inherits ERC20Votes.sol, hence, invokes delegate()
-    const TxDelegate = await govToken.delegate(delegatedAccount)
+    const TxDelegate = await govToken.delegate(delegatedAccount)        // B#2
     await TxDelegate.wait(1)
     // Also, checkpoints set when _moveVotingPower() invoked in delegate()
     // verify this by numCheckpoints(deployer)

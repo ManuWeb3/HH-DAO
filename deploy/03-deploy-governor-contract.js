@@ -15,7 +15,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     // "addresses" of govToken and timelock are input
     const args = [govToken.address, timelock.address, VOTING_DELAY, VOTING_PERIOD, QUORUM_FRACTION]
 
-    console.log("Deploying GovernorContract.sol...")
+    console.log("Deploying GovernorContract.sol...")                    //B#4
     const govContract = await deploy("GovernorContract", {                  
         from: deployer,
         args: args,                     

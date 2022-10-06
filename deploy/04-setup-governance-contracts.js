@@ -25,18 +25,18 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     // timelock does have these 2 f(): grant() and revoke() inheried...
     // but it's bcz deployer has these role-priviliges, that these f() get exec here
     // Voting process happens thru GovernorContract.sol: proposer and canceller roles
-    const proposerTx = await timelock.grantRole(proposerRole, governorContract.address)
+    const proposerTx = await timelock.grantRole(proposerRole, governorContract.address)     //B#5
     await proposerTx.wait(1)
     
     // usually, proposer has the canceller role as well
-    const cancellerTx = await timelock.grantRole(cancellerRole, governorContract.address)
+    const cancellerTx = await timelock.grantRole(cancellerRole, governorContract.address)   //B#6
     await cancellerTx.wait(1)
 
-    const executorTx = await timelock.grantRole(executorRole, ADDRESS_ZERO)
+    const executorTx = await timelock.grantRole(executorRole, ADDRESS_ZERO)                 //B#7
     await executorTx.wait(1)
 
     // time to revoke admin role from deployer after other roles have been granted and decentralized
-    const adminTx = await timelock.revokeRole(adminRole, deployer)
+    const adminTx = await timelock.revokeRole(adminRole, deployer)                          //B#8
     await adminTx.wait(1)
     // Now, anything that timelock does goes thru Governance process/model...
     // no single entity / group owns Timelock.sol (TimelockController.sol)

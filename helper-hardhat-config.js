@@ -9,6 +9,7 @@ const ADDRESS_ZERO = "0x0000000000000000000000000000000000000000"
 const NEW_STORE_VALUE = 77
 const FUNC = "store"
 const PROPOSAL_DESCRIPTION = "Proposal # 1, setting Box's value to 77"
+const proposalsFile = "proposals.json"
 
 const networkConfig = {
     4: {
@@ -36,6 +37,7 @@ module.exports = {
     NEW_STORE_VALUE,
     FUNC,
     PROPOSAL_DESCRIPTION,
+    proposalsFile,
 }
 
 // syntax: module.exports = {}

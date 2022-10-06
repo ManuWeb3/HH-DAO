@@ -6,7 +6,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     const {deploy, log} = deployments                                
     const {deployer} = await getNamedAccounts()                         // deployer is the public address of accounts[0]
     
-    console.log("Deploying Timelock.sol...")
+    console.log("Deploying Timelock.sol...")                            // B#3
     const govToken = await deploy("Timelock", {                  
         from: deployer,
         args: [MIN_DELAY, [], []],                      // kept args. - 'proposers' and 'executors' blank for now                            

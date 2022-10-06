@@ -6,7 +6,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     const {deploy, log} = deployments                                
     const {deployer} = await getNamedAccounts()                         // deployer is the public address of accounts[0]
     
-    console.log("Deploying Box.sol...")
+    console.log("Deploying Box.sol...")                                 //B#9
     const box = await deploy("Box", {                  
         from: deployer,
         args: [],                      
@@ -26,7 +26,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
     const boxContract = await ethers.getContractAt("Box", box.address)
     const timelock = await ethers.getContract("Timelock")
     // getContract("") is fine to get its .address
-    const boxContractTx = await boxContract.transferOwnership(timelock.address)
+    const boxContractTx = await boxContract.transferOwnership(timelock.address) //B#10
     await boxContractTx.wait(1)
     console.log("Ownership transferred!")
     console.log("----------------------")
