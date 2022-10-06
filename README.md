@@ -4,4 +4,4 @@ Done:
 3. The scripts to interact with our DAO
 
 Yet to complete:
-4. The test scripts to test it all
+4. The test scripts
