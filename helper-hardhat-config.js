@@ -1,6 +1,6 @@
 // const { ethers } = require("hardhat")
 
-const MIN_DELAY     = 3600          // 1 hour = 3,600 s - meant for Timelock.sol's constructor
+const MIN_DELAY     = 200          // 1 hour = 3,600 s - meant for Timelock.sol's constructor
 const VOTING_DELAY  = 1             // 1 block- meant for GovernorContract.sol's constructor
 const VOTING_PERIOD = 5             // 5 block- ------------do-----------------------------
 const QUORUM_FRACTION = 4           // 4% when denominator is set to 100 -------do--------

@@ -4,13 +4,13 @@ const { verify } = require("../utils/verify")
 
 module.exports = async function ({getNamedAccounts, deployments}) {     // get auto-pulled from hre, hence, all-time available
     // trying out with get("ContractName")
-    const {deploy, log, get} = deployments                                
+    const {deploy } = deployments                                
     const {deployer} = await getNamedAccounts()                         // deployer is the public address of accounts[0]
     
     // 5 args in the contructor
     // using get() instead of ethers.getContract() - same functionality
-    const govToken = await get("GovernanceToken")    
-    const timelock = await get("Timelock")
+    const govToken = await ethers.getContract("GovernanceToken")    
+    const timelock = await ethers.getContract("Timelock")
     
     // "addresses" of govToken and timelock are input
     const args = [govToken.address, timelock.address, VOTING_DELAY, VOTING_PERIOD, QUORUM_FRACTION]
@@ -27,7 +27,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
 
     // Verifying on Goerli testnet
     if(!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {        // process.env is accessible here in deploy script
-    log(`Verifying on Goerli.Etherscan.......`)
+    console.log(`Verifying on Goerli.Etherscan.......`)
     await verify(govContract.address, args)
     console.log("Verified!")
     console.log("---------")

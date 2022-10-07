@@ -30,8 +30,9 @@ async function vote(proposalId, voteWay, reasonToVote) {
     const voteTxResponse = await governor.castVoteWithReason(proposalId, voteWay, reasonToVote) //B#14, when voting started at # 13
     const voteTxResponseReceipt = await voteTxResponse.wait(1)
     // an event VoteCast() is emitted, details commented below...
-    console.log(voteTxResponseReceipt.events[0].args.reason)        // i/p 'reason' saved on-chain
+    console.log(`Reason: ${voteTxResponseReceipt.events[0].args.reason}`)        // i/p 'reason' saved on-chain
     console.log("Vote casted!")
+    console.log("------------")
     // As I'm the only one voting, have to move the blocks to proceed
     if(developmentChains.includes(network.name)) {
         await moveBlocks(VOTING_PERIOD + 1)

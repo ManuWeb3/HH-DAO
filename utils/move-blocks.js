@@ -11,6 +11,7 @@ async function moveBlocks (amount) {
         })        
     }
     console.log(`Moved ${amount} blocks`)
+    console.log("--------------")
 }
 
 module.exports = {moveBlocks}

@@ -55,6 +55,7 @@ module.exports = {
             saveDeployments: true,
             chainId: 5,
             blockConfirmations: 6,
+            allowUnlimitedContractSize: true,
         },
         mainnet: {
             url: MAINNET_RPC_URL,

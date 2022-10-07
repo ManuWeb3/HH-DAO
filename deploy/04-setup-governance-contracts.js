@@ -45,3 +45,5 @@ module.exports = async function ({getNamedAccounts, deployments}) {     // get a
 }
 
 // No verify() in this case
+
+module.exports.tags = ["all", "setuproles"]
