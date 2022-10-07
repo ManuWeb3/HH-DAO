@@ -5,7 +5,7 @@ const verify = async (contractAddress, args) => {               // verify() take
     try {
     await run("verify:verify", {    //  seems like this "verify" keyword here does the "under the hood" verification work using ETHERSCAN_API_KEY
                                     //  will double check during revision ??
-      contract: "contracts/Timelock.sol:Timelock",
+      contract: "contracts/governance_standard/Timelock.sol:Timelock",
       address: contractAddress,
       constructorArguments: args,   //  what this constructorArguments: args is doing here??
                                     //  I believe - it's taking in those args that's required to be passed into the Constructor of Raffle.sol while deploying                      

@@ -1,4 +1,4 @@
-const { network} = require("hardhat")
+const { network, ethers } = require("hardhat")
 const { developmentChains, VOTING_DELAY, VOTING_PERIOD, QUORUM_FRACTION} = require("../helper-hardhat-config")
 const { verify } = require("../utils/verify")
 
